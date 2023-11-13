@@ -1,11 +1,11 @@
-use bat::{Input, PrettyPrinter};
+use bat::PrettyPrinter;
 use colored::Colorize;
 use eyre::{Result, WrapErr};
 use indicatif::{MultiProgress, ProgressBar, ProgressStyle};
 use inquire::Confirm;
 use rand::Rng;
+use std::thread;
 use std::time::Duration;
-use std::{env, thread};
 
 use clap::Parser;
 use std::{
@@ -59,8 +59,7 @@ fn main() -> Result<()> {
         println!("");
         println!("  1. Why do we need CLI");
         println!("  2. Cool dependencies for CLI in Rust");
-        println!("  3. Not sure yet");
-        println!("  4. Q&A");
+        println!("  3. Q&A");
 
         text("Does that sounds right?", "🔥 Alright!")?;
         clear();
@@ -82,7 +81,7 @@ fn main() -> Result<()> {
         );
         println!("  2. Cookiecutter tools for non-techies. Complete form. Format document. Apply AI/ML to basic tools.
         Check out: https://github.com/cookiecutter/cookiecutter");
-        println!("  3. Create awesome client for your own library/server, that users love!");
+        println!("  3. Create awesome client for your own library/server/API, that users love!");
 
         text("That's awesome, isn't it?", "😎 Absolutely!")?;
         clear();
@@ -252,10 +251,13 @@ fn main() -> Result<()> {
 
     println!("{}", "That is all for today!".bold());
     println!("");
-    println!("For homework, please check out t");
-    println!("  2. Cool dependencies for CLI in Rust");
-    println!("  3. Not sure yet");
-    println!("  4. Q&A");
+    println!(
+        "For homework, please check out the stop PR: https://github.com/dora-rs/dora/pull/184"
+    );
+    println!("You can also check out how to standardise our dora-rs CLI commands.");
+    println!("Or how to better handle the different binaries distributions.");
+
+    text("Thanks for running me!💗", "")?;
     Ok(())
 }
 
