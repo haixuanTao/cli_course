@@ -153,7 +153,13 @@ fn main() -> Result<()> {
     next_project();
     println!(
         "  4. termcolor. Add colors to your CLI prints 🌈
-    See: https://docs.rs/termcolor/latest/termcolor/"
+    See: https://docs.rs/termcolor/latest/termcolor/
+
+    or:
+    
+            Colored. Coloring terminal with simple traits 🎠
+    See: https://github.com/colored-rs/colored
+    "
     );
     let mut stdout = StandardStream::stdout(ColorChoice::Always);
     stdout.set_color(ColorSpec::new().set_fg(Some(Color::Green)))?;
@@ -220,10 +226,36 @@ fn main() -> Result<()> {
 
     indicatif();
 
-    println!("Next cool project is:");
-    println!("");
-    println!("  6. Indicatif. Progress bar for CLI");
+    text("Wow!", "")?;
 
+    next_project();
+
+    println!(
+        "  8. ratatui. terminal user interfaces in rust.
+    
+    See: https://github.com/ratatui-org/ratatui
+    "
+    );
+
+    text("Got it!", "")?;
+    next_project();
+
+    println!(
+        "  9. Dioxus Lab. Dioxus is a portable, performant, and ergonomic framework for building cross-platform user interfaces in Rust.
+    
+    See: https://github.com/DioxusLabs/dioxus
+    "
+    );
+
+    text("Nice!", "")?;
+    clear();
+
+    println!("{}", "That is all for today!".bold());
+    println!("");
+    println!("For homework, please check out t");
+    println!("  2. Cool dependencies for CLI in Rust");
+    println!("  3. Not sure yet");
+    println!("  4. Q&A");
     Ok(())
 }
 
