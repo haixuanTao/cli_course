@@ -16,14 +16,14 @@ use std::{
     },
 };
 use termcolor::{Color, ColorChoice, ColorSpec, StandardStream, WriteColor};
-/// Simple program to greet a person
+/// Simple program of CLI Demo
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-    /// Flag to skip and go to clap section
+    /// Flag to skip and go to inquire section
     #[arg(long, default_value_t = false)]
     go_to_inquire: bool,
-    /// Flag to skip and go to clap section
+    /// Flag to skip and go to termcolor section
     #[arg(long, default_value_t = false)]
     go_to_termcolor: bool,
 }
